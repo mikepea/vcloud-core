@@ -26,5 +26,13 @@ module Vcloud
       @logger ||=Logger.new(STDOUT)
     end
 
+    def self.connection
+      @connection ||= ::Fog::Compute::VcloudDirector.new()
+    end
+
+    def self.connection=(obj)
+      @connection = obj
+    end
+
   end
 end

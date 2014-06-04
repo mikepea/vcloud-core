@@ -1,8 +1,8 @@
 module Vcloud
   module Fog
     class ModelInterface
-      def initialize
-        @vcloud = ::Fog::Compute::VcloudDirector.new
+      def initialize(conn=nil)
+        @vcloud = conn || Vcloud::Core.connection
       end
 
       def org_name

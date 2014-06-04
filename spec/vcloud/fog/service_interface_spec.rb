@@ -22,7 +22,7 @@ module Vcloud
         before(:each) do
           @config = { :Blah => 'TestData' }
           @vcloud = double(:vcloud)
-          expect(::Fog::Compute::VcloudDirector).to receive(:new).and_return(@vcloud)
+          expect(::Vcloud::Core).to receive(:connection).and_return(@vcloud)
         end
 
         it "should configure firewall for given edge gateway id" do

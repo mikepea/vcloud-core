@@ -15,8 +15,8 @@ module Vcloud
       # FogFacade Inner class to represent a logic free facade over our interactions with Fog
 
       class FogFacade
-        def initialize
-          @vcloud = ::Fog::Compute::VcloudDirector.new
+        def initialize(conn=nil)
+          @vcloud = conn || Vcloud::Core.connection
         end
 
         def get_vdc(name)

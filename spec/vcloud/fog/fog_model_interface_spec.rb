@@ -18,7 +18,7 @@ describe Vcloud::Fog::ModelInterface do
             :body => {:VMRecord => [{:href => vm_href, :containerName => 'vapp-1', :vdc => vdc_href}]}
         )
     )
-    expect(Fog::Compute::VcloudDirector).to receive(:new).and_return(vcloud)
+    expect(::Vcloud::Core).to receive(:connection).and_return(vcloud)
 
     expect(Vcloud::Fog::ModelInterface.new.get_vm_by_href(vm_href)).to eq(vm)
   end
