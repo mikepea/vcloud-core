@@ -1,6 +1,7 @@
 require 'fog'
 require 'vcloud/core/fog/fog_constants'
 require 'vcloud/core/fog/login'
+require 'vcloud/core/fog/connection'
 require 'vcloud/core/fog/service_interface'
 require 'vcloud/core/fog/model_interface'
 
