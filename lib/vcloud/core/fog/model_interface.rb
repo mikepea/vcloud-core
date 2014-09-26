@@ -9,7 +9,7 @@ module Vcloud
       # @api private
       class ModelInterface
         def initialize
-          @vcloud = ::Fog::Compute::VcloudDirector.new
+          @vcloud = ::Vcloud::Core::Fog::Connection.default_connection
         end
 
         def org_name

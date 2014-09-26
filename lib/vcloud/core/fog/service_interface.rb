@@ -25,7 +25,7 @@ module Vcloud
 
         class FogFacade
           def initialize
-            @vcloud = ::Fog::Compute::VcloudDirector.new
+            @vcloud = ::Vcloud::Core::Fog::Connection.default_connection
           end
 
           def get_vdc(id)
